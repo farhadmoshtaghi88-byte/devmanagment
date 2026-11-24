@@ -1,0 +1,76 @@
+/* Custom global styles */
+@layer base {
+  html, body {
+    font-family: 'Vazirmatn', sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.recharts-wrapper {
+  direction: ltr;
+}
+
+.recharts-tooltip-wrapper {
+  direction: rtl;
+  z-index: 40;
+}
+
+/* Completely hide scrollbar for sidebar while keeping scroll functionality */
+.custom-sidebar-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+.custom-sidebar-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+
+/* Dedicated A4 Invoice Print Engine */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide everything except the active invoice sheet */
+  body * {
+    visibility: hidden !important;
+  }
+
+  .invoice-print-target,
+  .invoice-print-target * {
+    visibility: visible !important;
+  }
+
+  .invoice-print-target {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    z-index: 99999 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

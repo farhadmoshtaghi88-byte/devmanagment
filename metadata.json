@@ -1,0 +1,8 @@
+{
+  "name": "DevManager Pro 2",
+  "description": "A comprehensive RTL dashboard for managing professional clients, projects, infrastructure, and finances, designed for developers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
